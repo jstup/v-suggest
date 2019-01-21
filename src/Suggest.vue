@@ -1,8 +1,8 @@
 <template>
     <div :name="name">
         <input type="text" v-model.trim="text" :placeholder="placeholder" :disabled="disabled" ref="input"
-               @keyup.prevent="processKey"
-               @keydown.prevent="processControl"
+               @keyup="processKey"
+               @keydown="processControl"
                @focus="open" >
         <div class="sg-clear"
              @click="clear"
