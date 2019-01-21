@@ -100,6 +100,7 @@
                 }, this.delay * 1000);
             },
             processControl(e){
+                e.preventdefault();
                 if ([38, 40, 27, 13, 9].includes(e.keyCode)) {
                     switch (e.keyCode) {
                         case 38:// up
