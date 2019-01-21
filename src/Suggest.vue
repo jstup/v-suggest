@@ -1,8 +1,8 @@
 <template>
     <div :name="name">
         <input type="text" v-model.trim="text" :placeholder="placeholder" :disabled="disabled" ref="input"
-               @keyup="processKey"
-               @keydown="processControl"
+               @keyup.prevent="processKey"
+               @keydown.prevent="processControl"
                @focus="open" >
         <div class="sg-clear"
              @click="clear"
@@ -100,7 +100,6 @@
                 }, this.delay * 1000);
             },
             processControl(e){
-                e.preventdefault();
                 if ([38, 40, 27, 13, 9].includes(e.keyCode)) {
                     switch (e.keyCode) {
                         case 38:// up
